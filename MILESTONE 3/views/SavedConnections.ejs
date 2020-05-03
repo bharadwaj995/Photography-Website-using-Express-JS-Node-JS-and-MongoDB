@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SavedConnections</title>
+  
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../assets/styling.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<%- include ('./partials/header.ejs') %>
+
+<%- include ('./partials/nav.ejs') %>
+
+<% if(userconnections.length>0){ %>
+<main id="tableelem">
+    <div>
+        <h2>Schedule of Events</h2>
+
+        <br>
+        <br>
+        
+        <table id="tableattr">
+          <tr>
+          <th>Tips for Photography</th>
+          <th> Venue of the event where the tips would be explained</th>
+          <th>Date and time</th>
+          <th>Going?</th>
+          <th></th>
+          </tr>
+          <% userconnections.forEach(function(eachSavedConnection){ console.log(eachSavedConnection); %> 
+            <tr>
+              <td><b><%= eachSavedConnection.getConnection.getConnection_name%></b></td>
+              <td><%= eachSavedConnection.getConnection.getVenue%></td>
+              <td><%= eachSavedConnection.getConnection.getDateandtime%></td>
+              <td><%= eachSavedConnection.getRSVP%></td>
+            <td>
+
+              <form method="POST">
+                <button class="button button1"formaction='./connection?conID=<%=eachSavedConnection.getConnection.getConnectionId%>'>UPDATE</button>
+                <button class="button button2"formaction='SavedConnections?conID=<%=eachSavedConnection.getConnection.getConnectionId%>&action=delete'>DELETE</button>  
+              </form>
+        
+              
+            </td>
+              </tr>
+          <% }); %>
+          
+        </table>
+    </div>
+</main>
+<% } else{ %>
+  <p><strong>Hey! Kindly request you to please select any connection</strong></p>
+<% } %>
+
+<%- include ('./partials/footer.ejs') %>
+

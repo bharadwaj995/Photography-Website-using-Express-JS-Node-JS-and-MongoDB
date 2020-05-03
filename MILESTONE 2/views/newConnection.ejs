@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>newConnections</title>
+  
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../assets/styling.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<%- include ('./partials/header2.ejs') %>
+
+<%- include ('./partials/nav2.ejs') %>
+		<section>
+      <div class="newconnect_form">
+        <form>
+          <table class="newconnect">
+              <tr>
+                <td><label class="label"> <b>TOPIC</b> </label></td>
+                <td><input class="textbox" type="text" placeholder="Topic"></td>
+              </tr>
+              <tr>
+                <td><label class="label"> <B>NAME</B> </label></td>
+                <td><input class="textbox" type="text" placeholder="Name"></td>
+              </tr>
+              <tr>
+                <td><label class="label"> <B>DETAILS</B> </label></td>
+                <td><textarea name="name" rows="10" cols="100" placeholder="Details"></textarea></td>
+              </tr>
+              <tr>
+                <td><label class="label"> <B>WHERE</B> </label></td>
+                <td><input class="textbox" type="text" placeholder="Place"></td>
+              </tr>
+              <tr>
+                <td><label class="label"> <B>WHEN</B> </label></td>
+                <td><input class="textbox" type="date"></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input  type="submit" value="Submit">
+                </td>
+              </tr>
+          </table>
+        </form>
+  	</div>
+	</section>
+  <footer>
+    <%- include('partials/footer.ejs') %>
+  </footer>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<div class="header">
+  <% if(session!=undefined){ %>
+    <a href="index" ><img  alt="Logo" src="../../assets/images/ogo-camera.jpg"></a>
+      <h1 id="headname">Shutters by Travelgram</h1>
+    <div class="header-right">
+      <a class="active" href="newConnection">Start a New Connection</a>
+      <a href="contact">Contact</a>
+      <a href="about">About</a>
+      <a href="SavedConnections">My Connections</a>
+      <a href="logout">Signout</a>
+  <% } else { %>
+    <a href="index" ><img  alt="Logo" src="../../assets/images/ogo-camera.jpg"></a>
+      <!-- <img src = "ogo-camera.jpg" alt="Logo"> -->
+      <h1 id="headname">Shutters by Travelgram</h1>
+    <div class="header-right">
+      <a class="active" href="newConnection">Start a New Connection</a>
+      <a href="contact">Contact</a>
+      <a href="about">About</a>
+      <a href="login">Login</a>
+      <a href="Signup">Signup</a>
+ <% } %>
+    </div>
+  </div>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>connection</title>
+  
+  <meta charset="UTF-8">
+
+<link rel="stylesheet" type="text/css" href="../assets/styling.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body >
+
+
+<%- include ('./partials/header.ejs') %>
+
+<%- include ('./partials/nav.ejs') %>
+
+<main id="connectionselements">
+  <div class="inlineDiv"></div>
+   
+      <div class="lastTwo">
+        <h2><%=connection.getConnection_name%></h2>
+        <div id="coneectionleftDiv">
+        <ul>
+          <%=connection.getDetails%>
+              </ul>
+            </div>
+            <div id="imgcon">
+              <img id="connectionImage" src="<%=connection.getImage%>" alt="connection">
+            </div>
+        </div>
+        
+        <div class="lastTwo">
+          <p>Is the rule interesting to implement?.<p>
+
+            <form action="<% if(session!=undefined){ %>
+              savedConnections?conID=<%=connection.getConnectionId%>&action=save
+          <% } else { %>
+           login
+         <% } %>" method="<% if(session!=undefined){ %>post<% } else{ %>get<% } %>">
+              <button class="btnCon con1" name="response" value="yes">Yes</button>
+              <button class="btnCon con2" name="response" value="no">No</button>
+              <button class="btnCon con3" name="response" value="maybe">Maybe</button>
+            </form> 
+          </div>
+</main>
+
+<%- include ('./partials/footer.ejs') %>
+
+  </body>
+  </html>
+

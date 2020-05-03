@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SavedConnections</title>
+  
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../assets/styling.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<%- include ('./partials/header2.ejs') %>
+
+<%- include ('./partials/nav2.ejs') %>
+
+<main id="tableelem">
+    <div>
+        <h2>Schedule of Events</h2>
+
+        <br>
+        <br>
+        
+        <table id="tableattr">
+          <tr>
+          <th>Tips for Photography</th>
+          <th> Venue of the event where the tips would be explained</th>
+          <th>Date and time</th>
+          <th></th>
+          </tr>
+          <% SavedConnections.forEach(function(eachSavedConnection){ %> 
+            <tr>
+              <td><b><%= eachSavedConnection.getConnection_name%></b></td>
+              <td><%= eachSavedConnection.getVenue%></td>
+              <td><%= eachSavedConnection.getDateandtime%></td>
+              
+            <td>
+        
+              <button onclick="window.location.href = 'connection';" class="button button1">UPDATE</button>
+              <button onclick="window.location.href = 'SavedConnections';" class="button button2">DELETE</button>
+            
+            </td>
+              </tr>
+          <% }); %>
+              
+<!-- <tr>
+
+  <td><b>Foxy Silver Snapshots</b></td>
+        <td>Central Park, New York City, NY</td>
+        <td>26th February, 2020 10:00 AM</td>
+
+            <td>
+  
+              <button onclick="window.location.href = 'connection.html';" class="button button1">UPDATE</button>
+              <button onclick="window.location.href = 'SavedConnections.html';" class="button button2">DELETE</button>
+      
+            </td>
+</tr>
+        
+<tr>
+
+  <td><b>Sublime Pearl Smiles</b></td>
+        <td>Brooklyn Bridge, New York City, NY</td>
+        <td>27th February, 2020 10:00 AM</td>
+
+            <td>
+  
+              <button onclick="window.location.href = 'connection.html';" class="button button1">UPDATE</button>
+              <button onclick="window.location.href = 'SavedConnections.html';" class="button button2">DELETE</button>
+      
+            </td>
+</tr> -->
+        
+          
+        </table>
+    </div>
+</main>
+
+<%- include ('./partials/footer.ejs') %>
+

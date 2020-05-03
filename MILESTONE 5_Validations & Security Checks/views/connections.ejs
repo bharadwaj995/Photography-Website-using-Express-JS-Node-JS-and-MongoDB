@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>connections</title>
+  
+   <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../assets/styling.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body >
+
+
+<%- include ('./partials/header.ejs') %>
+
+<%- include ('./partials/nav.ejs') %>
+    
+<main id="mainelem">
+  <% categories.forEach(function(data){%>
+    <h2>
+      <%= data %>
+    </h2>         
+    <ul>
+      <% connections.forEach(function(value){%> 
+        <% if(value.getConnection_category==data){ %>
+          <li>
+            <a href="connection?conID=<%= value.getConnectionId%>"> <%= value.getConnection_name %></a>
+          </li>  
+        <%}%>
+     <% }); %>  
+    </ul>      
+  <%});%>
+   
+</main >
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<%- include ('./partials/footer.ejs') %>
+
+  </body >
+  </html>
