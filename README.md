@@ -1,2 +1,2 @@
 # NBAD_Milestone-Submissions
-Node JS Web Application using express JS, MongoDB
+End to end Node JS Web Application using express JS, MongoDB
