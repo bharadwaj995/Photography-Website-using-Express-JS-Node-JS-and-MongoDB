@@ -43,7 +43,7 @@ router.get('/signup', function (req, res) {
 
 router.all('/connection', async function (req, res) {
  // res.redirect("connections")
-  if(Object.keys(req.query).length!=0){
+  if(Object.keys(req.query).length!=0 && /^[0-9]+$/.test(req.query.conID)){
     var connectiondb_mongo_Obj = new connectiondb_mongo();
     var conObj = await connectiondb_mongo_Obj.getConnection(req.query.conID);
     console.log(conObj);

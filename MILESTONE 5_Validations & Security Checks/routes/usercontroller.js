@@ -76,7 +76,7 @@ router.all('/Savedconnections*', urlencodedParser, async function(req, res){
     else{
         var conID = req.query.conID;
         var connResp = req.body.response;
-        if(action=="save" && connResp){
+        if(action=="save" && connResp  && /^[0-9]+$/.test(req.query.conID)){
             var getUserProfile = await userProfiledb_mongo_Obj.getUserProfile(activeuserdetails.userID);
             if(getUserProfile.length==0)
             {
@@ -89,11 +89,11 @@ router.all('/Savedconnections*', urlencodedParser, async function(req, res){
             }
         //userprofileobj.addConnection(connectionDB.getconnection(conID),connResp);
         }
-        else if(action=="delete"){
+        else if(action=="delete" && /^[0-9]+$/.test(req.query.conID)){
             let abc = await userProfiledb_mongo_Obj.deleteUserConnection(activeuserdetails.userID,conID);
             //userprofileobj.removeConnection(connectionDB.getconnection(conID));
         }
-        else if(action=='update'&&connResp){
+        else if(action=='update'&&connResp && /^[0-9]+$/.test(req.query.conID)){
             let abc = await userProfiledb_mongo_Obj.updateUserRSVP(activeuserdetails.userID,conID,connResp);
 
         }
