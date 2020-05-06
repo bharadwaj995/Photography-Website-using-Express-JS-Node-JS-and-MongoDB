@@ -1,5 +1,5 @@
 //Deifining and acquiring the mongo properties and connecting it to NODE JS
-var url = "mongodb+srv://root:<password>@bharadwaj95-3q91i.gcp.mongodb.net/test?retryWrites=true&w=majority"
+var url = "mongodb+srv://root:root@bharadwaj95-3q91i.gcp.mongodb.net/test?retryWrites=true&w=majority"
 var mongoose = require("mongoose");
 mongoose.connect(url);
 // mongoose.connect("mongodb://localhost:27017/milestone4");
