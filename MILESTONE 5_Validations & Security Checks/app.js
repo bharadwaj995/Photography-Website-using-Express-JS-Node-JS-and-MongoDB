@@ -14,9 +14,10 @@ var usercontroller = require('./routes/usercontroller');
 
 app.use('/',usercontroller);
 
-app.listen(8084,function(){
+app.set('port', process.env.PORT || 5000)
+app.listen(app.get('port'),function(){
     console.log('app started')
-    console.log('listening on port 8084')
+    console.log('Welcome to the NodeJS Appl')
 });
 
 
